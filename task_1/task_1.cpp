@@ -12,27 +12,54 @@ map <char, int> sumChar(const string& str){ // эта функция отвеч�
     return result;
 }
 
+bool check(const map <char, int>& Str){ //тут мы проверяем на то является ли это палиндромом
+    int  prov = 0; // для проверки
+    for (auto i : Str){ 
+        if (i.second % 2 == 1){
+            prov +=1;
+            if (prov >1){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+string polindrom(const map<char, int>& Str){ // полиндром строим 
+    string left = "";
+    string middle = "";
+
+    for (auto i : Str){ // строим левую часть и середину
+        left += string(i.second / 2, i.first);
+        if (i.second % 2 == 1){
+            middle = string(1, i.first);
+        }
+    }
+
+    string right = left; // правая часть — зеркальная
+    reverse(right.begin(), right.end());
+
+    return  (left + middle + right);
+}
+
 int main(){
-    string newStr;
-    int prov = 0; //проверка
+    string oldStr;
     map <char, int> Str; // тут мы будем хранить кол-во букв
-    cin >> newStr; //вводим строку
-    Str = sumChar(newStr);
+    cin >> oldStr; //вводим строку
+    Str = sumChar(oldStr);
 
     // for (auto i : Str){
     //     cout << i.first << " " <<i.second << endl;
     // }
 
-    for (auto i : Str){
-        if (i.second == 1){
-            prov +=1;
-            if (prov >1){
-                cout << "No";
-                return 0;
-            }
-        }
+    bool check_polin = check(Str); //тут мы проверяем на то является ли это палиндромом
+    if (check_polin == 0){
+        cout << "No" << endl;
+        return 0;
+    } else {
+        cout << "Yes" <<endl;
     }
-    cout << "YES";
 
+    cout << polindrom(Str) << endl; // выводим полиндром
     return 0;
 }
