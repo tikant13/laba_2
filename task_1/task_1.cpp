@@ -48,11 +48,9 @@ int main(){
     cin >> oldStr; //вводим строку
     Str = sumChar(oldStr);
 
-    // for (auto i : Str){
-    //     cout << i.first << " " <<i.second << endl;
-    // }
-
+    
     bool check_polin = check(Str); //тут мы проверяем на то является ли это палиндромом
+
     if (check_polin == 0){
         cout << "No" << endl;
         return 0;
