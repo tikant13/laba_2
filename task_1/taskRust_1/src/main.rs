@@ -8,8 +8,8 @@ fn sumChar(s : &str) -> HashMap<char, i32> { // эта функция отвеч
     }
     result
 }
-// 2. Проверяем на возможность создания палиндрома
-fn check(counts: &HashMap<char, i32>) -> bool {
+// Проверяем на возможность создания палиндрома
+fn check(counts: &HashMap<char, i32>) -> bool{
     let mut odd_count = 0;
     for &count in counts.values() {
         if count % 2 != 0 {
