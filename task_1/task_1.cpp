@@ -30,7 +30,7 @@ string polindrom(const map<char, int>& Str){ // полиндром строим
     string middle = "";
 
     for (auto i : Str){ // строим левую часть и середину
-        left += string(i.second / 2, i.first);
+        left += string(i.second / 2, i.first); // то сколько символов должно встретиться в левой половине
         if (i.second % 2 == 1){
             middle = string(1, i.first);
         }
