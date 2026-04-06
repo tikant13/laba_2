@@ -1,7 +1,7 @@
 use std:: collections::HashMap; // вместо map
 use std::io; // для ввода и вывода
 
-fn sumChar(s : &str) -> HashMap<char, i32> { // эта функция отвечает за счёт кол-ва букв 
+fn sum_char(s : &str) -> HashMap<char, i32> { // эта функция отвечает за счёт кол-ва букв 
     let mut result: HashMap<char, i32> = HashMap::new();
     for i in s.chars() {
         *result.entry(i).or_insert(0) += 1; // позволяет найти значение или втавить 0, если ключа нет
@@ -28,7 +28,7 @@ fn palindrom(counts: &HashMap<char, i32>) -> String { // полиндром ст
 
     
     for (&ch, &count) in counts { // итерация по HashMap дает ссылки на ключ и значение
-        let half = (count / 2) as usize; // Добавляем половину символов в левую часть
+        let half: usize = (count / 2) as usize; // Добавляем половину символов в левую часть
         left.push_str(&ch.to_string().repeat(half));
 
         if count % 2 != 0 {
@@ -42,11 +42,11 @@ fn palindrom(counts: &HashMap<char, i32>) -> String { // полиндром ст
     format!("{}{}{}", left, middle, right)
 }
 fn main() {
-   let mut oldStr = String::new();
-   io::stdin().read_line(&mut oldStr).unwrap();
-   let oldStr = oldStr.trim(); // Убираем символ переноса строки \n
+   let mut old_str: String = String::new();
+   io::stdin().read_line(&mut old_str).unwrap();
+   let old_str = old_str.trim(); // Убираем символ переноса строки \n
 
-    let counts = sumChar(&oldStr);
+    let counts: HashMap<char, i32> = sum_char(&old_str);
     if !check(&counts) {
         println!("No");
     } else {
@@ -54,3 +54,4 @@ fn main() {
         println!("{}", palindrom(&counts));
     }
 }
+// cargo run

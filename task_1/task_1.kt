@@ -29,7 +29,6 @@ fun buildPalindrome(counts: Map<Char, Int>): String {
     val left = StringBuilder()
     var middle = ""
 
-    // Проходим по отсортированной карте (TreeMap), чтобы результат был стабильным
     val sortedCounts = counts.toSortedMap()
 
     for ((char, count) in sortedCounts) {
@@ -65,4 +64,4 @@ fun main() {
     }
 }
 
-// чтобы скомпилировать kotlinc hello.kt -include-runtime -d hello.jar и запустить java -jar hello.jar
+// чтобы скомпилировать kotlinc task_1.kt -include-runtime -d task_1.jar и запустить java -jar task_1.jar
