@@ -1,13 +1,11 @@
-def sum_char(s):
-    """Считает количество букв в строке."""
+def sum_char(s): #  Считает количество букв в строке
     result = {}
     for char in s:
         
         result[char] = result.get(char, 0) + 1 # get(char, 0) вернет 0, если ключа еще нет в словаре
     return result
 
-def check_palindrome(char_map):
-    """Проверяет, можно ли из этих букв составить палиндром."""
+def check_palindrome(char_map): #Проверяет, можно ли из этих букв составить палиндром
     odd_count = 0
     for count in char_map.values():
         if count % 2 == 1:
@@ -16,8 +14,7 @@ def check_palindrome(char_map):
                 return False
     return True
 
-def build_palindrome(char_map):
-    """Строит сам палиндром."""
+def build_palindrome(char_map): # Строит сам палиндром
     left = []
     middle = ""
     
