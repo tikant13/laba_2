@@ -64,3 +64,5 @@ fun main() {
         println(buildPalindrome(charCounts))
     }
 }
+
+// чтобы скомпилировать kotlinc hello.kt -include-runtime -d hello.jar и запустить java -jar hello.jar
