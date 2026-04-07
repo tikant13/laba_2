@@ -1,10 +1,6 @@
 "use strict";
 
-/**
- * Проверка email на соответствие правилам
- * @param {string} str 
- * @returns {boolean}
- */
+
 function limitations(str) {
     const symbols = "qwertyuiopasdfghjklzxcvbnm0123456789.+";
     const zapret = "&=+<>,_`-";
@@ -53,11 +49,11 @@ function normalEmail(str) {
     return `${cleanName}@${domain}`;
 }
 
-// Эмуляция работы программы (в JS обычно используют prompt или ввод из консоли Node.js)
+
 function startApp() {
     const emailsSet = new Set();
     
-    // Пример списка для проверки (в реальности можно использовать readline)
+
     const testInputs = [
         "my.email+extra@gmail.com",
         "myemail@gmail.com",
@@ -79,7 +75,7 @@ function startApp() {
         }
     }
 
-    console.log(`---`);
+    
     console.log(`Уникальных адресов: ${emailsSet.size}`);
 }
 
