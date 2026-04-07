@@ -101,7 +101,7 @@ int main(){
     while (email!="end"){ // вводим email пока не введём end
         cin >> email; 
         if (limitations(email) == false && email !="end"){
-            cout <<"EROR!!!" <<endl;
+            cout <<"ERROR!!!" <<endl;
         } else {
             if (email !="end"){
                 email = normalEmail(email);
