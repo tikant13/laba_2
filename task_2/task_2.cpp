@@ -113,8 +113,4 @@ int main(){
 
     cout << "Уникальных адресов " << emails.size() << endl;
 
-    for (auto i : emails){
-        cout << i << " ";
-    }
-
 }
